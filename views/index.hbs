@@ -1,0 +1,28 @@
+<div class="jumbotron">
+    <div class="container">
+        <h1>{{title}}</h1>
+        <p>Create a JavaScript shim set.</p>
+    </div>
+</div>
+<div class="container">
+    <p>Please select shims to generate a shim set.</p>
+    <br/>
+    <form method="post" action="/shim">
+        <div class="form-group">
+        {{#shims}}
+        <label class="checkbox-inline">
+            <input type="checkbox" name="shims" value="{{this}}"> {{this}}
+        </label>
+        {{/shims}}
+        </div>
+        <hr/>
+        <div class="checkbox">
+            <label>
+                <input type="checkbox" name="minify" value="true"> Minify
+            </label>
+        </div>
+        <br/>
+        
+        <button type="submit" class="btn btn-primary">Generate</button>
+    </form>
+</div>
